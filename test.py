@@ -9,6 +9,4 @@ CLUMP = clumpGenerator_Ferellec_McDowell.clumpGenerator_Ferellec_McDowell(
     pmax=1.0,
     isShuffled=True)
 
-np.savetxt("clump_positions", CLUMP.clump.positions, delimiter=';')
-np.savetxt("clump_radii", CLUMP.clump.radii, delimiter=';')
-
+np.savetxt('clump_info.txt', np.asarray(np.hstack((CLUMP.clump.positions, CLUMP.clump.radii))), delimiter=",")
