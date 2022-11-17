@@ -9,7 +9,7 @@ class Clump:
 
 
 class clumpGenerator_Ferellec_McDowell(Clump):
-    def __init__(self, stl_dir, rstep, rmin, dmin, pmax, isShuffled=True):
+    def __init__(self, stl_dir, rstep, rmin, dmin, pmax, output_dir=None, isShuffled=True):
         super().__init__()
 
         self.clump = Clump()
@@ -28,6 +28,10 @@ class clumpGenerator_Ferellec_McDowell(Clump):
         self.isShuffled = isShuffled
 
         self.generate_clump()
+        
+        if output_dir is not None:
+            np.savetxt(output_dir, np.asarray(np.hstack((self.clump.positions, self.clump.radii))),
+                       delimiter=",")
 
     def generate_clump(self):
         for i in range(self.P.shape[0]):
