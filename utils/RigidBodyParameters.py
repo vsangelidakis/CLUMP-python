@@ -1,5 +1,10 @@
 import numpy as np
 
+"""
+Original author is Anton Semechko (a.semechko@gmail.com).
+
+I translated into Python.
+"""
 
 # this is an ugly design. I will fix it later
 class RBP:
