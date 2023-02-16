@@ -30,7 +30,7 @@ class RBP:
 
         # Zeroth order moment (same as volume enclosed by the mesh) ---------------
         C = (X1 + X2 + X3) / 3.0
-        m000 = np.sum(np.sum(np.multiply(FN, C)))
+        m000 = np.sum(np.sum(np.multiply(FN, C))) / 6.0
 
         epsilon = np.finfo(float).eps  # Machine epsilon
         if m000 < epsilon:
